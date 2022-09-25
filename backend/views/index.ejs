@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.jsdelivr.net/npm/fetch-jsonp@1.1.3/build/fetch-jsonp.min.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>ユーザー情報を入力</p>
+    <form method="POST">
+      <label>名前</label>
+      <input type="text" name="name">
+    <br>
+    <label>郵便番号</label>
+    <input type="text" name="zipcode" id="zipcode">
+    <input type="submit" value="住所検索" id="search_address_btn">
+    <br>
+    <label>住所</label>
+    <input type="text" name="address" id="address">
+    <br>
+    <select name="prefecture">
+      <% for (var pref of arr) { %>
+        <option><%= pref %></option>
+        <% } %>
+      </select>
+    <label>メール</label>
+    <input type="text" name="email">
+    <br>
+    <input type="submit" value="送信" formaction="register">
+      </form>
+  </body>
+</html>
